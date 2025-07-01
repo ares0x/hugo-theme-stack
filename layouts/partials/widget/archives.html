@@ -1,8 +1,8 @@
-{{- $query := first 1 (where .Context.Site.Pages "Layout" "==" "archives") -}}
-{{- $context := .Context -}}
-{{- $limit := default 5 .Params.limit -}}
-{{- if $query -}}
-    {{- $archivesPage := index $query 0 -}}
+{{ $query := first 1 (where .Context.Site.Pages "Layout" "==" "archives") }}
+{{ $context := .Context }}
+{{ $limit := default 5 .Params.limit }}
+{{ if $query }}
+    {{ $archivesPage := index $query 0 }}
     <section class="widget archives">
         <div class="widget-icon">
             {{ partial "helper/icon" "infinity" }}
@@ -30,6 +30,6 @@
             {{ end }}
         </div>
     </section>
-{{- else -}}
-    {{- warnf "Archives page not found. Create a page with layout: archives." -}}
-{{- end -}}
+{{ else }}
+    {{ warnf "Archives page not found. Create a page with layout: archives." }}
+{{ end }}
