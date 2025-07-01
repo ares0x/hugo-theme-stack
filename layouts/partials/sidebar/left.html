@@ -37,7 +37,7 @@
         </div>
     </header>
 
-    {{- with .Site.Menus.social -}}
+    {{ with .Site.Menus.social }}
         <ol class="menu-social">
             {{ range . }}
                 <li>
@@ -55,7 +55,7 @@
                 </li>
             {{ end }}
         </ol>
-    {{- end -}}
+    {{ end }}
 
     <ol class="menu" id="main-menu">
         {{ $currentPage := . }}
