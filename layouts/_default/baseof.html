@@ -3,9 +3,7 @@
     <head>
         {{- partial "head/head.html" . -}}
         {{- block "head" . -}}{{ end }}
-{{ if not hugo.IsServer }}
-    {{ template "_internal/google_analytics_async.html" . }}
-{{ end }}
+{{ template "_internal/google_analytics_async.html" . }}
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
